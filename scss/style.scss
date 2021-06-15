@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'mediaQueries';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: $font-family;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color: $content-background;
+    height: $content-height;
+    width: $content-width;
+    text-align: center;
+    border: {
+        radius: $border-radius;
+        style: solid;
+        width: 1px;
+        color: $content-background;
+    };
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+
+        .inputContent {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 15px;
+        }
+
+        input {
+            outline: none;
+            border-radius: $border-radius;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 1.2rem;
+            border: {
+                radius: $border-radius;
+                color: $button-bcg-color;
+                style: solid;
+                width: 1px;
+            }
+            background-color: $button-bcg-color;
+            color: #fff;
+            &:hover {
+                background-color: #7b5d61;
+                color: #fff;
+            }
+            cursor: pointer;
+        }
+    }
+    @include phone {
+        width: $content-width-phone;
+    }
+}
